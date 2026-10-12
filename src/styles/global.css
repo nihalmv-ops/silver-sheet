@@ -1,0 +1,231 @@
+/* ==========================================================
+   SILVER CATERING - GLOBAL BRAND STYLESHEET
+   Brand Colors from https://www.silvercatering.in/
+   ========================================================== */
+
+:root {
+  /* Brand Green Palette */
+  --color-primary: #1d3f2c;         /* Deep Forest Green */
+  --color-primary-dark: #12281c;    /* Dark Forest */
+  --color-primary-light: #2c5c40;   /* Leaf Emerald */
+  --color-primary-subtle: #ebf2ed;  /* Very soft sage tint */
+
+  /* Gold & Brass Accents */
+  --color-gold: #9d8050;            /* Brand Accent Gold */
+  --color-gold-hover: #c29c5e;      /* Bright Gold */
+  --color-gold-light: rgba(157, 128, 80, 0.12); /* Subtle Gold Wash */
+  --color-gold-border: rgba(157, 128, 80, 0.35);
+
+  /* Cream & White Surfaces */
+  --color-bg: #f8f6f0;              /* Luxury Warm Cream */
+  --color-surface: #ffffff;         /* Pure Card White */
+  --color-surface-hover: #fcfbfa;   /* Subtle Cream Hover */
+  --color-surface-sunken: #f1ede4;  /* Deep Cream Sunken */
+
+  /* Borders & Dividers */
+  --color-border: #e6e0d4;          /* Soft Cream Border */
+  --color-border-dark: #d3cbba;     /* Defined Border */
+
+  /* Typography Colors */
+  --color-text-main: #182c20;       /* Dark Green-Black */
+  --color-text-body: #374151;       /* Neutral Charcoal */
+  --color-text-muted: #6b7280;      /* Muted Gray */
+  --color-text-light: #9ca3af;      /* Light Gray */
+
+  /* Status Colors */
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --color-danger-border: #fecaca;
+  --color-success: #15803d;
+  --color-success-bg: #f0fdf4;
+  --color-success-border: #bbf7d0;
+  --color-warning: #b45309;
+  --color-warning-bg: #fffbeb;
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(29, 63, 44, 0.04);
+  --shadow-sm: 0 2px 6px rgba(29, 63, 44, 0.06);
+  --shadow-md: 0 8px 20px rgba(29, 63, 44, 0.08);
+  --shadow-lg: 0 16px 36px rgba(29, 63, 44, 0.12);
+  --shadow-gold: 0 6px 18px rgba(157, 128, 80, 0.25);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #d4ccb8;
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Base button resets */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--transition-fast);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Common interactive buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.02em;
+  transition: all var(--transition-normal);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(29, 63, 44, 0.2);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(29, 63, 44, 0.28);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: #ffffff;
+  box-shadow: var(--shadow-gold);
+}
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+.btn-secondary:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-danger-outline {
+  background-color: var(--color-surface);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger-border);
+}
+.btn-danger-outline:hover {
+  background-color: var(--color-danger-bg);
+  border-color: var(--color-danger);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-icon {
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-gold {
+  background: var(--color-gold-light);
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold-border);
+}
+
+.badge-green {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border: 1px solid rgba(29, 63, 44, 0.15);
+}
+
+.badge-gray {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+

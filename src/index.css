@@ -1,0 +1,10 @@
+@import "./styles/global.css";
+@import "./styles/dashboard.css";
+@import "./styles/print.css";
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,350 @@
+/* ==========================================================
+   SILVER CATERING - PRINTABLE A4 EXPENSE SHEET STYLES
+   Designed specifically for physical A4 printing on standard
+   office printers (Inkjet / Laser).
+   ========================================================== */
+
+/* Default Screen view of the print preview component */
+.printable-sheet-container {
+  display: block;
+}
+
+.a4-sheet {
+  background: #ffffff;
+  color: #111111;
+  width: 100%;
+  max-width: 800px; /* ~210mm on standard screens */
+  min-height: 1120px; /* ~297mm A4 aspect ratio */
+  margin: 0 auto;
+  padding: 36px 42px 42px;
+  box-sizing: border-box;
+  font-family: 'Outfit', Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Print Header */
+.print-header {
+  border-bottom: 2px solid #111111;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.print-brand-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.print-logo-img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.print-logo-fallback {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.print-title-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.print-company-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #111111;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.print-sheet-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #333333;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.print-contact-details {
+  font-size: 0.75rem;
+  color: #444444;
+  margin-top: 4px;
+  line-height: 1.35;
+  max-width: 320px;
+}
+
+.print-header-meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 6px;
+}
+
+.print-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid #111111;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Event Metadata Line (Date & Event Name writing space) */
+.print-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  font-size: 0.92rem;
+}
+
+.print-field {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.print-field-label {
+  font-weight: 700;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.print-field-line {
+  flex: 1;
+  border-bottom: 1px solid #222222;
+  min-height: 22px;
+  padding: 0 4px;
+  font-weight: 500;
+}
+
+/* PRINT TABLE (EXACT REQUIREMENTS: INDEX | ITEMS | AMOUNT (₹)) */
+.print-table-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.print-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  border: 1.5px solid #111111;
+}
+
+.print-table thead {
+  display: table-header-group;
+}
+
+.print-table th {
+  border: 1px solid #111111;
+  padding: 8px 10px;
+  background-color: #f2f2f2 !important;
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.print-table td {
+  border: 1px solid #222222;
+  padding: 6px 10px;
+  height: 31px; /* Ample height for handwriting with a pen */
+  vertical-align: middle;
+  color: #000000;
+}
+
+/* Strict Column Widths */
+.print-col-index {
+  width: 65px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.print-col-item {
+  text-align: left;
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.print-col-amount {
+  width: 160px;
+  text-align: right;
+  /* Strictly blank in printed document */
+}
+
+/* Blank row styling */
+.print-row-blank td {
+  background-color: #ffffff;
+}
+
+/* Total Row */
+.print-total-row {
+  font-weight: 800;
+  border-top: 2px solid #111111;
+}
+
+.print-total-label {
+  text-align: right;
+  padding-right: 18px !important;
+  letter-spacing: 0.1em;
+  font-size: 0.92rem;
+  background-color: #f7f7f7 !important;
+}
+
+.print-total-amount-box {
+  /* Kept completely empty for user to handwrite total with pen */
+  background-color: #ffffff !important;
+  border: 1.5px solid #111111 !important;
+}
+
+/* Signatures Section */
+.print-signatures {
+  margin-top: 28px;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  font-size: 0.88rem;
+}
+
+.signature-field {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.signature-label {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.signature-line {
+  flex: 1;
+  border-bottom: 1px solid #222222;
+  min-height: 26px;
+}
+
+/* Print Sheet Footer Notice */
+.print-footer-notice {
+  margin-top: 20px;
+  font-size: 0.72rem;
+  color: #555555;
+  text-align: center;
+  border-top: 1px dashed #cccccc;
+  padding-top: 8px;
+}
+
+/* ==========================================================
+   CSS @MEDIA PRINT RULES
+   Triggers when window.print() or Ctrl+P is called.
+   ========================================================== */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Completely HIDE all non-printable screen UI */
+  .app-sidebar,
+  .app-header,
+  .no-print,
+  .modal-backdrop,
+  .page-header-block,
+  .dashboard-hero,
+  .stats-grid,
+  .add-item-box,
+  .action-btn-group,
+  .btn,
+  .sidebar-backdrop,
+  .screen-only {
+    display: none !important;
+  }
+
+  /* Display printable sheet exclusively */
+  .printable-sheet-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a4-sheet {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-after: auto;
+  }
+
+  .print-header {
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  .print-table {
+    border: 1.5px solid #000000 !important;
+  }
+
+  .print-table th {
+    background-color: #f0f0f0 !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  .print-table td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    page-break-inside: avoid;
+  }
+
+  .print-table tr {
+    page-break-inside: avoid;
+  }
+
+  .print-signatures {
+    page-break-inside: avoid;
+  }
+
+  .print-footer-notice {
+    page-break-inside: avoid;
+  }
+}
+
