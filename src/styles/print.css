@@ -16,7 +16,7 @@
   max-width: 800px; /* ~210mm on standard screens */
   min-height: 1120px; /* ~297mm A4 aspect ratio */
   margin: 0 auto;
-  padding: 36px 42px 42px;
+  padding: 34px 40px 38px;
   box-sizing: border-box;
   font-family: 'Outfit', Arial, Helvetica, sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -28,8 +28,8 @@
 /* Print Header */
 .print-header {
   border-bottom: 2px solid #111111;
-  padding-bottom: 14px;
-  margin-bottom: 18px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,20 +43,20 @@
 }
 
 .print-logo-img {
-  width: 68px;
-  height: 68px;
+  width: 66px;
+  height: 66px;
   object-fit: contain;
 }
 
 .print-logo-fallback {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   border: 2px solid #111111;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-family: 'Playfair Display', Georgia, serif;
 }
 
@@ -88,9 +88,9 @@
 .print-contact-details {
   font-size: 0.75rem;
   color: #444444;
-  margin-top: 4px;
+  margin-top: 3px;
   line-height: 1.35;
-  max-width: 320px;
+  max-width: 330px;
 }
 
 .print-header-meta-right {
@@ -115,8 +115,8 @@
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 24px;
-  margin-bottom: 20px;
-  padding: 8px 0;
+  margin-bottom: 16px;
+  padding: 4px 0;
   font-size: 0.92rem;
 }
 
@@ -140,7 +140,7 @@
   font-weight: 500;
 }
 
-/* PRINT TABLE (EXACT REQUIREMENTS: INDEX | ITEMS | AMOUNT (₹)) */
+/* PRINT TABLE (MAXIMIZED USABLE COLUMN & ROW WRITING SPACE) */
 .print-table-wrapper {
   flex: 1;
   width: 100%;
@@ -171,7 +171,7 @@
 .print-table td {
   border: 1px solid #222222;
   padding: 6px 10px;
-  height: 31px; /* Ample height for handwriting with a pen */
+  height: 33px; /* Spacious row height for easy pen handwriting */
   vertical-align: middle;
   color: #000000;
 }
@@ -211,6 +211,7 @@
   padding-right: 18px !important;
   letter-spacing: 0.1em;
   font-size: 0.92rem;
+  height: 36px;
   background-color: #f7f7f7 !important;
 }
 
@@ -220,38 +221,9 @@
   border: 1.5px solid #111111 !important;
 }
 
-/* Signatures Section */
-.print-signatures {
-  margin-top: 28px;
-  padding-top: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 36px;
-  font-size: 0.88rem;
-}
-
-.signature-field {
-  flex: 1;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.signature-label {
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.signature-line {
-  flex: 1;
-  border-bottom: 1px solid #222222;
-  min-height: 26px;
-}
-
 /* Print Sheet Footer Notice */
 .print-footer-notice {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 0.72rem;
   color: #555555;
   text-align: center;
@@ -267,7 +239,7 @@
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm 12mm 12mm 12mm;
+    margin: 8mm 12mm 10mm 12mm;
   }
 
   html, body {
@@ -339,12 +311,7 @@
     page-break-inside: avoid;
   }
 
-  .print-signatures {
-    page-break-inside: avoid;
-  }
-
   .print-footer-notice {
     page-break-inside: avoid;
   }
 }
-

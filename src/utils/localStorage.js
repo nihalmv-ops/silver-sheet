@@ -7,7 +7,7 @@ const STORAGE_KEYS = {
 };
 
 export const DEFAULT_SETTINGS = {
-  minPrintRows: 20, // Keep A4 sheet neat with standard 20 rows
+  minPrintRows: 25, // Fills full A4 sheet with maximized rows
   showAddressInPrint: true,
   showPhoneInPrint: true,
   companyName: "SILVER CATERING",
@@ -15,8 +15,6 @@ export const DEFAULT_SETTINGS = {
   companyAddress: "Thalakuttiparambil House, Mecheriparambu, Irimbiliyam PO, Valanchery, Kerala - 679572",
   companyPhone: "+91 98464 15767",
   currencySymbol: "₹",
-  defaultPreparedBy: "",
-  defaultCheckedBy: "",
   autoSaveStatus: true,
 };
 
@@ -166,4 +164,3 @@ export function importDataFromJSON(jsonString) {
     return { success: false, error: err.message || "Failed to parse JSON file." };
   }
 }
-

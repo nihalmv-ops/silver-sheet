@@ -121,13 +121,13 @@ export default function Settings({
             value={formData.minPrintRows}
             onChange={(e) => handleChange("minPrintRows", parseInt(e.target.value, 10))}
           >
-            <option value={15}>15 Rows (Spacious layout)</option>
-            <option value={20}>20 Rows (Recommended standard A4)</option>
-            <option value={25}>25 Rows (Compact spacing)</option>
-            <option value={30}>30 Rows (Maximum items per page)</option>
+            <option value={20}>20 Rows (Spacious)</option>
+            <option value={25}>25 Rows (Recommended - Full A4 utilization)</option>
+            <option value={28}>28 Rows (Dense)</option>
+            <option value={30}>30 Rows (Maximum items)</option>
           </select>
           <div style={{ fontSize: "0.78rem", color: "var(--color-text-muted)", marginTop: "4px" }}>
-            If you have fewer items than this count, clean blank numbered rows are generated for writing items with a pen.
+            The space previously used for signatures is now dedicated to extra table rows for pen entry.
           </div>
         </div>
 
@@ -198,28 +198,6 @@ export default function Settings({
             />
           </div>
         )}
-
-        <div className="form-group">
-          <label className="form-label">Default "Prepared By" Name (Optional)</label>
-          <input
-            type="text"
-            className="form-input"
-            placeholder="Leave empty for blank pen signature line"
-            value={formData.defaultPreparedBy}
-            onChange={(e) => handleChange("defaultPreparedBy", e.target.value)}
-          />
-        </div>
-
-        <div className="form-group">
-          <label className="form-label">Default "Checked By" Name (Optional)</label>
-          <input
-            type="text"
-            className="form-input"
-            placeholder="Leave empty for blank pen signature line"
-            value={formData.defaultCheckedBy}
-            onChange={(e) => handleChange("defaultCheckedBy", e.target.value)}
-          />
-        </div>
       </div>
 
       {/* Section 3: Data Backup, Export & Reset */}

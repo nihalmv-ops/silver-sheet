@@ -9,9 +9,9 @@ export default function PrintExpenseSheet({
   const [logoError, setLogoError] = useState(false);
 
   const items = activeList?.items || [];
-  const minRows = settings?.minPrintRows || 20;
+  const minRows = settings?.minPrintRows || 25;
 
-  // Calculate how many blank rows to pad
+  // Calculate how many blank rows to pad so the table utilizes the full A4 space
   const currentCount = items.length;
   const blankRowsNeeded = Math.max(0, minRows - currentCount);
 
@@ -121,23 +121,6 @@ export default function PrintExpenseSheet({
           </table>
         </div>
 
-        {/* Signatures Section */}
-        <footer className="print-signatures">
-          <div className="signature-field">
-            <span className="signature-label">Prepared By:</span>
-            <div className="signature-line">
-              {settings?.defaultPreparedBy ? settings.defaultPreparedBy : ""}
-            </div>
-          </div>
-
-          <div className="signature-field">
-            <span className="signature-label">Checked By:</span>
-            <div className="signature-line">
-              {settings?.defaultCheckedBy ? settings.defaultCheckedBy : ""}
-            </div>
-          </div>
-        </footer>
-
         {/* Bottom verification watermark */}
         <div className="print-footer-notice">
           Silver Catering • Authentic Kerala Catering Services • For Official Physical Record Use
@@ -146,4 +129,3 @@ export default function PrintExpenseSheet({
     </div>
   );
 }
-
