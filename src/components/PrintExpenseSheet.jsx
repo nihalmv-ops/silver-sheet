@@ -9,7 +9,7 @@ export default function PrintExpenseSheet({
   const [logoError, setLogoError] = useState(false);
 
   const items = activeList?.items || [];
-  const minRows = settings?.minPrintRows || 25;
+  const minRows = settings?.minPrintRows || 30;
 
   // Calculate how many blank rows to pad so the table utilizes the full A4 space
   const currentCount = items.length;

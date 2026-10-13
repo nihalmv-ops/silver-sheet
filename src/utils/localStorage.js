@@ -7,7 +7,7 @@ const STORAGE_KEYS = {
 };
 
 export const DEFAULT_SETTINGS = {
-  minPrintRows: 25, // Fills full A4 sheet with maximized rows
+  minPrintRows: 30, // Recommended 30 rows on A4 sheet
   showAddressInPrint: true,
   showPhoneInPrint: true,
   companyName: "SILVER CATERING",

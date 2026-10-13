@@ -122,12 +122,12 @@ export default function Settings({
             onChange={(e) => handleChange("minPrintRows", parseInt(e.target.value, 10))}
           >
             <option value={20}>20 Rows (Spacious)</option>
-            <option value={25}>25 Rows (Recommended - Full A4 utilization)</option>
-            <option value={28}>28 Rows (Dense)</option>
-            <option value={30}>30 Rows (Maximum items)</option>
+            <option value={25}>25 Rows (Medium)</option>
+            <option value={30}>30 Rows (Recommended - Full A4 Sheet)</option>
+            <option value={35}>35 Rows (Extended)</option>
           </select>
           <div style={{ fontSize: "0.78rem", color: "var(--color-text-muted)", marginTop: "4px" }}>
-            The space previously used for signatures is now dedicated to extra table rows for pen entry.
+            Recommended: 30 rows fits perfectly on a single A4 sheet without reducing letter size.
           </div>
         </div>
 
